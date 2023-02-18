@@ -21,7 +21,8 @@ namespace UserRegistrationProblems
                     "4.Check validation for Mobile Number\n" +
                     "5.Check validation for Password Rule1\n" +
                     "6.Check validation for Password Rule2\n" +
-                    "6.Check validation for Password Rule3\n" +
+                    "7.Check validation for Password Rule3\n" +
+                    "8.Check validation for Password Rule4\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -143,6 +144,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nAfter apply Rule-3 List of valid and Invalid Password:\n-------------------------------------");
                         Pattern.ValidatePattern(passwordRule3Inputs, code6);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 8:
+                        Console.Clear();
+                        string code7 = Pattern.passwordRule4Pattern;
+                        Console.WriteLine("Enter how many password want to check for excatly 1 special character validation:");
+                        int number7 = Convert.ToInt32(Console.ReadLine());
+                        string[] passwordRule4Inputs = new string[number7];
+                        Console.WriteLine("\nList of Password between 1 to {0} for check validation:\n----------------------------------------------------", number7);
+                        for (int i = 0; i < number7; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            passwordRule4Inputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nAfter apply Rule-3 List of valid and Invalid Password:\n-------------------------------------");
+                        Pattern.ValidatePattern(passwordRule4Inputs, code7);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
