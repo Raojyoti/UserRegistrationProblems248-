@@ -21,6 +21,7 @@ namespace UserRegistrationProblems
                     "4.Check validation for Mobile Number\n" +
                     "5.Check validation for Password Rule1\n" +
                     "6.Check validation for Password Rule2\n" +
+                    "6.Check validation for Password Rule3\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -125,6 +126,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nAfter apply Rule-2 List of valid and Invalid Password:\n-------------------------------------");
                         Pattern.ValidatePattern(passwordRule2Inputs, code5);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 7:
+                        Console.Clear();
+                        string code6 = Pattern.passwordRule3Pattern;
+                        Console.WriteLine("Enter how many password want to check at least 1 numeric number.:");
+                        int number6 = Convert.ToInt32(Console.ReadLine());
+                        string[] passwordRule3Inputs = new string[number6];
+                        Console.WriteLine("\nList of Password between 1 to {0} for check validation:\n----------------------------------------------------", number6);
+                        for (int i = 0; i < number6; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            passwordRule3Inputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nAfter apply Rule-3 List of valid and Invalid Password:\n-------------------------------------");
+                        Pattern.ValidatePattern(passwordRule3Inputs, code6);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
