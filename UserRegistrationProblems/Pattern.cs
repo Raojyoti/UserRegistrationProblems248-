@@ -11,6 +11,10 @@ namespace UserRegistrationProblems
     {
         //UC1-First name starts with Cap and has minimum 3 characters
         public static string firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
+
+        //UC2-Last name starts with Cap and has minimum 3 characters
+        public static string lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
+
         /// <summary>
         /// This method used to check Validation
         /// </summary>
