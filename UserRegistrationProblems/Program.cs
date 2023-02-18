@@ -17,6 +17,7 @@ namespace UserRegistrationProblems
                 Console.WriteLine("Please choose any options");
                 Console.WriteLine("1.Check Validation for First Name\n" +
                     "2.Check Validation for Last Name\n" +
+                    "3.Check validation for Email Id\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -52,6 +53,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nList of valid and Invalid Last Name:\n-------------------------------------");
                         Pattern.ValidatePattern(lastNameInputs, code1);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        string code2 = Pattern.emailIdPattern;
+                        Console.WriteLine("Enter how many email id want to check for validation:");
+                        int number2 = Convert.ToInt32(Console.ReadLine());
+                        string[] emailIdInputs = new string[number2];
+                        Console.WriteLine("\nList of Email id between 1 to {0} for check validation:\n----------------------------------------------------", number2);
+                        for (int i = 0; i < number2; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            emailIdInputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nList of valid and Invalid Email Id:\n-------------------------------------");
+                        Pattern.ValidatePattern(emailIdInputs, code2);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;

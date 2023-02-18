@@ -15,6 +15,9 @@ namespace UserRegistrationProblems
         //UC2-Last name starts with Cap and has minimum 3 characters
         public static string lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
 
+        //UC3-Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions
+        public static string emailIdPattern = @"^([abc]+)(\.[a-z0-9_\+\-]+)?@([bl]+)\.([co]{2,4})(\.[a-z]{2,})?$";//abc.xyz@bl.co.in
+
         /// <summary>
         /// This method used to check Validation
         /// </summary>
