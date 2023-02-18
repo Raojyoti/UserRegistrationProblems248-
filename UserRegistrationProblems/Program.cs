@@ -20,6 +20,7 @@ namespace UserRegistrationProblems
                     "3.Check validation for Email Id\n" +
                     "4.Check validation for Mobile Number\n" +
                     "5.Check validation for Password Rule1\n" +
+                    "6.Check validation for Password Rule2\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -107,6 +108,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nAfter apply Rule-1 List of valid and Invalid Password:\n-------------------------------------");
                         Pattern.ValidatePattern(passwordRule1Inputs, code4);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 6:
+                        Console.Clear();
+                        string code5 = Pattern.passwordRule2Pattern;
+                        Console.WriteLine("Enter how many password want to check at least 1 Upper Case:");
+                        int number5 = Convert.ToInt32(Console.ReadLine());
+                        string[] passwordRule2Inputs = new string[number5];
+                        Console.WriteLine("\nList of Password between 1 to {0} for check validation:\n----------------------------------------------------", number5);
+                        for (int i = 0; i < number5; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            passwordRule2Inputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nAfter apply Rule-2 List of valid and Invalid Password:\n-------------------------------------");
+                        Pattern.ValidatePattern(passwordRule2Inputs, code5);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
