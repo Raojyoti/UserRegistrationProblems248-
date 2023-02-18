@@ -73,6 +73,24 @@ namespace UserRegistrationProblems
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
+
+                    case 4:
+                        Console.Clear();
+                        string code3 = Pattern.mobileNumberPattern;
+                        Console.WriteLine("Enter how many mobile number want to check for validation:");
+                        int number3 = Convert.ToInt32(Console.ReadLine());
+                        string[] mobileNumberInputs = new string[number3];
+                        Console.WriteLine("\nList of mobile number between 1 to {0} for check validation:\n----------------------------------------------------", number3);
+                        for (int i = 0; i < number3; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            mobileNumberInputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nList of valid and Invalid Mobile number:\n-------------------------------------");
+                        Pattern.ValidatePattern(mobileNumberInputs, code3);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
                     case 10:
                         Console.Clear();
                         Console.ReadLine();
