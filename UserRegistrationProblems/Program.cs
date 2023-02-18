@@ -18,6 +18,8 @@ namespace UserRegistrationProblems
                 Console.WriteLine("1.Check Validation for First Name\n" +
                     "2.Check Validation for Last Name\n" +
                     "3.Check validation for Email Id\n" +
+                    "4.Check validation for Mobile Number\n" +
+                    "5.Check validation for Password Rule1\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -88,6 +90,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nList of valid and Invalid Mobile number:\n-------------------------------------");
                         Pattern.ValidatePattern(mobileNumberInputs, code3);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        string code4 = Pattern.passwordRule1Pattern;
+                        Console.WriteLine("Enter how many password want to check for minimum 8 Characters.:");
+                        int number4 = Convert.ToInt32(Console.ReadLine());
+                        string[] passwordRule1Inputs = new string[number4];
+                        Console.WriteLine("\nList of Password between 1 to {0} for check validation:\n----------------------------------------------------", number4);
+                        for (int i = 0; i < number4; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            passwordRule1Inputs[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\nAfter apply Rule-1 List of valid and Invalid Password:\n-------------------------------------");
+                        Pattern.ValidatePattern(passwordRule1Inputs, code4);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
