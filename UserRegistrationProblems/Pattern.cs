@@ -33,6 +33,9 @@ namespace UserRegistrationProblems
         //UC8-Password Rule3– Has  exactly 1 Special Characters.
         public static string passwordRule4Pattern = @"^[a-zA-Z0-9]?[~`!@#$%^&*()-_+={}[]|\;:""<>,./?]{1,8}$";
 
+        //UC9-Sample Emails to Test
+        public static string testEmailIdPattern = @"^([a-z0-9\.\-]+)?@([a-z0-9]+)\.([a-z\,\.]+)$";
+
         /// <summary>
         /// This method used to check Validation
         /// </summary>

@@ -23,6 +23,7 @@ namespace UserRegistrationProblems
                     "6.Check validation for Password Rule2\n" +
                     "7.Check validation for Password Rule3\n" +
                     "8.Check validation for Password Rule4\n" +
+                    "9.Check validation for All email id\n" +
                     "10.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -161,6 +162,23 @@ namespace UserRegistrationProblems
                         }
                         Console.WriteLine("\nAfter apply Rule-3 List of valid and Invalid Password:\n-------------------------------------");
                         Pattern.ValidatePattern(passwordRule4Inputs, code7);
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 9:
+                        Console.Clear();
+                        string code8 = Pattern.testEmailIdPattern;
+                        Console.WriteLine("Enter how many Sample Email id want to Test:");
+                        int number8 = Convert.ToInt32(Console.ReadLine());
+                        string[] emailIdInput1 = new string[number8];
+                        Console.WriteLine("\nList of email id between 1 to {0} for check validation:\n----------------------------------------------------", number8);
+                        for (int i = 0; i < number8; i++)
+                        {
+                            Console.Write("{0} =>  ", i + 1);
+                            emailIdInput1[i] = Console.ReadLine();
+                        }
+                        Console.WriteLine("\n List of valid and Invalid Email id:\n-------------------------------------");
+                        Pattern.ValidatePattern(emailIdInput1, code8);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
