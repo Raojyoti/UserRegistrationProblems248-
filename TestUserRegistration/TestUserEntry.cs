@@ -9,13 +9,21 @@ namespace TestUserRegistration
     {
         /// <summary>
         /// TC1-First name starts with Capital and has minimum 3 characters
+        /// TC2-Last name starts with Capital and has minimum 3 characters
+        /// TC3-Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions
+        /// TC4-Country code follow by space and 10 digit number.
+        /// TC5-Password Validation.
         /// </summary>
         /// <param name="input"></param>
         /// <param name="pattern"></param>
         /// <param name="expected"></param>
         [TestMethod]
         [DataRow("Jyoti", "^[A-Z]{1}[a-z]{2,}$", "Valid")]
-        public void CheckValidationForFirstName(string input, string pattern,string expected)
+        [DataRow("Rao", "^[A-Z]{1}[a-z]{2,}$", "Valid")]
+        [DataRow("abc.xyz@bl.co.in", @"^([abc]+)(\.[a-z0-9_\+\-]+)?@([bl]+)\.([co]{2,4})(\.[a-z]{2,})?$", "Valid")]
+        [DataRow("91 9919819801", "^[1-9]{2}?([ ])[0-9]{10}$", "Valid")]
+        [DataRow("#Jyoti1rAO", "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", "Valid")]
+        public void TestValidationForUserEntries(string input, string pattern,string expected)
         {
             //Arrange
             Pattern pattern1 = new Pattern();
@@ -24,77 +32,27 @@ namespace TestUserRegistration
             //Assert
             Assert.AreEqual(expected,actual);
         }
-
         /// <summary>
-        /// TC2-First name starts with Capital and has minimum 3 characters
+        /// 
         /// </summary>
         /// <param name="input"></param>
         /// <param name="pattern"></param>
         /// <param name="expected"></param>
         [TestMethod]
-        [DataRow("Rao", "^[A-Z]{1}[a-z]{2,}$", "Valid")]
-        public void CheckValidationForLastName(string input, string pattern, string expected)
+        public void TestValidationForEmailSamples()
         {
             //Arrange
+            string[] input = { "abc@yahoo.com,", "abc-100@yahoo.com,", "abc.100@yahoo.com", "abc111@abc.com,", "abc-100@abc.net,", "abc.100@abc.com.au", "abc.100@abc.com.au", "abc@1.com,", "abc@gmail.com.com" };
+            string pattern = @"^([a-z0-9\.\-]+)?@([a-z0-9]+)\.([a-z\,\.]+)$";
+            string expected = "Valid";
             Pattern pattern1 = new Pattern();
-            //Act
-            string actual = pattern1.ValidateUserEntry(input, pattern);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// TC3-Email has 3 mandatory parts (abc, bl & co) and 2 optional(xyz & in) with precise @ and.positions
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="pattern"></param>
-        /// <param name="expected"></param>
-        [TestMethod]
-        [DataRow("abc.xyz@bl.co.in", @"^([abc]+)(\.[a-z0-9_\+\-]+)?@([bl]+)\.([co]{2,4})(\.[a-z]{2,})?$", "Valid")]
-        public void CheckValidationForEmailId(string input, string pattern, string expected)
-        {
-            //Arrange
-            Pattern pattern1 = new Pattern();
-            //Act
-            string actual = pattern1.ValidateUserEntry(input, pattern);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// TC4-Country code follow by space and 10 digit number.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="pattern"></param>
-        /// <param name="expected"></param>
-        [TestMethod]
-        [DataRow("91 9919819801", "^[1-9]{2}?([ ])[0-9]{10}$", "Valid")]
-        public void CheckValidationForMobileNumber(string input, string pattern, string expected)
-        {
-            //Arrange
-            Pattern pattern1 = new Pattern();
-            //Act
-            string actual = pattern1.ValidateUserEntry(input, pattern);
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// TC5-Password Validation.
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="pattern"></param>
-        /// <param name="expected"></param>
-        [TestMethod]
-        [DataRow("#Jyoti1rAO", "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", "Valid")]
-        public void CheckValidationForPassword(string input, string pattern, string expected)
-        {
-            //Arrange
-            Pattern pattern1 = new Pattern();
-            //Act
-            string actual = pattern1.ValidateUserEntry(input, pattern);
-            //Assert
-            Assert.AreEqual(expected, actual);
+            foreach (string inputItem in input)
+            {
+                //Act
+                string actual = pattern1.ValidateUserEntry(inputItem, pattern);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
         }
     }
 }
