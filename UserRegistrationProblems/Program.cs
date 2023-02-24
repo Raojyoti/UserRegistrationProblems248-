@@ -25,7 +25,8 @@ namespace UserRegistrationProblems
                     "7.Check validation for Password Rule3\n" +
                     "8.Check validation for Password Rule4\n" +
                     "9.Check validation for All email id\n" +
-                    "10.Exit\n");
+                    "10.Use Lambda function to validate User Entry\n" +
+                    "11.Exit\n");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -130,6 +131,28 @@ namespace UserRegistrationProblems
                         Console.ReadLine();
                         break;
                     case 10:
+                        Console.Clear();
+                        Pattern pattern1 = new Pattern();
+                        Console.WriteLine("Enter first name want to check for validation:");
+                        string firstName = Console.ReadLine();
+                        Console.WriteLine("Enter last name want to check for validation:");
+                        string lastName = Console.ReadLine();
+                        Console.WriteLine("Enter email id want to check for validation:");
+                        string emailId = Console.ReadLine();
+                        Console.WriteLine("Enter mobile number want to check for validation:");
+                        string phoneNumber = Console.ReadLine();
+                        Console.WriteLine("Enter password want to check for validation:");
+                        string password = Console.ReadLine();
+                        Console.WriteLine("After check validation result are:\n-------------------------------------");
+                        Console.WriteLine("FirstName ==> {0}",pattern1.ValidateFirstName(firstName));
+                        Console.WriteLine("LastName ==> {0}", pattern1.ValidateLastName(lastName));
+                        Console.WriteLine("PhoneNumber ==> {0}", pattern1.ValidatePhoneNumber(phoneNumber));
+                        Console.WriteLine("EmailId ==> {0}", pattern1.ValidateEmail(emailId));
+                        Console.WriteLine("Password ==> {0}", pattern1.ValidatePassword(password));
+                        Console.Write("\nPress any key to continue...... ");
+                        Console.ReadLine();
+                        break;
+                    case 11:
                         Console.Clear();
                         Console.ReadLine();
                         break;
