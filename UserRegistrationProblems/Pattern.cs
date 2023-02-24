@@ -11,23 +11,40 @@ namespace UserRegistrationProblems
     public class Pattern
     {
         /// <summary>
-        /// This method used to check Validation
+        /// UC12.1-Check validations for First Name and Last Name
+        /// UC12.2-Check validations for Email Id
+        /// UC12.3-Check validations for Phone Number
+        /// UC12.4-Check validations for Password
         /// </summary>
         /// <param name="inputs"></param>
         /// <param name="pattern"></param>
         /// <returns></returns>
-        public string ValidateUserEntry(string inputs, string pattern)
+        /// <exception cref="CustomExceptions"></exception>
+        public string ValidateUserDetails(string inputs, string pattern)
         {
-            if (Regex.IsMatch(inputs, pattern))
+            try
             {
-                Console.WriteLine("{0}    => Valid", inputs);
-                return "Valid";
+                if (inputs.Equals(string.Empty))
+                {
+                    Console.WriteLine("Given input \"Empty\" then\nthrow CustomExceptions");
+                    throw new CustomExceptions("Input is having empty", CustomExceptions.ExceptionTypes.EMPTY_INPUT);
+                }
+                else if (Regex.IsMatch(inputs, pattern))
+                {
+                    Console.WriteLine("{0}    => Valid", inputs);
+                    return "Valid";
+                }
+                else
+                {
+                    Console.WriteLine("{0}    => Invalid", inputs);
+                    return "Invalid";
+                }
             }
-            else
+            catch(NullReferenceException)
             {
-                Console.WriteLine("{0}    => Invalid", inputs);
-                return "Invalid";
-            }
+                Console.WriteLine("Given input \"null\" then\nthrow CustomExceptions");
+                throw new CustomExceptions("Input is having null", CustomExceptions.ExceptionTypes.NULL_INPUT);
+            }   
         }
     }
 }

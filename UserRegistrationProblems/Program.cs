@@ -36,7 +36,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter first name want to check for validation:");
                         string firstNameInputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                        pattern.ValidateUserEntry(firstNameInputs, firstNamePattern);
+                        pattern.ValidateUserDetails(firstNameInputs, firstNamePattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -47,7 +47,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter last name want to check for validation:");
                         string lastNameInputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                        pattern.ValidateUserEntry(lastNameInputs, lastNamePattern);
+                        pattern.ValidateUserDetails(lastNameInputs, lastNamePattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -58,7 +58,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter email id want to check for validation:");
                         string emailIdInputs = Console.ReadLine();
                         Console.WriteLine("\nList of valid and Invalid Email Id:\n-------------------------------------");
-                        pattern.ValidateUserEntry(emailIdInputs, emailIdPattern);
+                        pattern.ValidateUserDetails(emailIdInputs, emailIdPattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -70,7 +70,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter mobile number want to check for validation:");
                         string mobileNumberInputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                         pattern.ValidateUserEntry(mobileNumberInputs, mobileNumberPattern);
+                         pattern.ValidateUserDetails(mobileNumberInputs, mobileNumberPattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -81,7 +81,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter password want to check for minimum 8 Characters.:");
                         string passwordRule1Inputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                         pattern.ValidateUserEntry(passwordRule1Inputs, passwordRule1Pattern);
+                         pattern.ValidateUserDetails(passwordRule1Inputs, passwordRule1Pattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -92,7 +92,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter password want to check at least 1 Upper Case:");
                         string passwordRule2Inputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------"); ;
-                        pattern.ValidateUserEntry(passwordRule2Inputs, passwordRule2Pattern);
+                        pattern.ValidateUserDetails(passwordRule2Inputs, passwordRule2Pattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -103,7 +103,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter password want to check at least 1 numeric number.:");
                         string passwordRule3Inputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                        pattern.ValidateUserEntry(passwordRule3Inputs, passwordRule3Pattern);
+                        pattern.ValidateUserDetails(passwordRule3Inputs, passwordRule3Pattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -114,7 +114,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter password want to check for atleast 1 special character validation:");
                         string passwordRule4Inputs = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                        pattern.ValidateUserEntry(passwordRule4Inputs, passwordRule4Pattern);
+                        pattern.ValidateUserDetails(passwordRule4Inputs, passwordRule4Pattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
@@ -125,7 +125,7 @@ namespace UserRegistrationProblems
                         Console.WriteLine("Enter Sample Email id want to Test:");
                         string emailIdInput1 = Console.ReadLine();
                         Console.WriteLine("\nAfter check validation result is:\n-------------------------------------");
-                        pattern.ValidateUserEntry(emailIdInput1, testEmailIdPattern);
+                        pattern.ValidateUserDetails(emailIdInput1, testEmailIdPattern);
                         Console.Write("\nPress any key to continue...... ");
                         Console.ReadLine();
                         break;
